@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+	<!-- register -->
+
+
+
+	<section class="logins py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<div class="title-section mb-md-5 mb-4">
+				<h6 class="w3ls-title-sub"></h6>
+				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Add Heart Detail</h3>
+			</div><hr/>
+			<div class="login px-sm-12" style="width:100%">
+				<form action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="form-group row">
+						<div class="col-md-1">
+						<label>Age</label>
+						<input type="text" class="form-control" name="age"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Sex</label>
+						<input type="text" class="form-control" name="sex"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>CP</label>
+						<input type="text" class="form-control" name="cp"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Trestbps</label>
+						<input type="text" class="form-control" name="trestbps"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Cholestrol</label>
+						<input type="text" class="form-control" name="chole"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Fbs</label>
+						<input type="text" class="form-control" name="fbs"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Restecg</label>
+						<input type="text" class="form-control" name="restecg"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Thalach</label>
+						<input type="text" class="form-control" name="thalach"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Exang</label>
+						<input type="text" class="form-control" name="exang"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>OldPeak</label>
+						<input type="text" class="form-control" name="old_peak"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Slope</label>
+						<input type="text" class="form-control" name="slope"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>CA</label>
+						<input type="text" class="form-control" name="ca"  required="">
+						</div>
+					<div class="col-md-1">
+						<label>Thal</label>
+						<input type="text" class="form-control" name="thal"  required="">
+						</div>
+
+					</div>
+					<button type="submit" class="btn btn-primary submit mt-4">Send Heart data</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- //register -->
+
+{% endblock %}

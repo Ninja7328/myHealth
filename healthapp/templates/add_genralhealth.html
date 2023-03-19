@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+	<!-- register -->
+
+
+
+	<section class="logins py-5">
+		<div class="container py-xl-5 py-lg-3">
+			{% if predictiondata %}
+
+			<div class="title-section mb-md-5 mb-4">
+				<h6 class="w3ls-title-sub"></h6>
+				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Result After Prediction</h3>
+			</div><hr/>
+
+			<div class="form-group row">
+				<div class="col-md-6" style="border:1px solid black;padding:6px;background:blue;color:white">
+					<label><b>Model Name</b></label>
+				</div>
+				<div class="col-md-6" style="border:1px solid black;padding:6px;background:blue;color:white">
+					<label><b>Prediction Output</b></label>
+				</div>
+				{% for i, j in predictiondata.items %}
+				<div class="col-md-6" style="border:1px solid black;padding:6px">
+					<label><b>{{i}}</b></label>
+				</div>
+				<div class="col-md-6" style="border:1px solid black;padding:6px">
+					<label>{{j}}</label>
+				</div>
+				{% endfor %}
+			
+			</div>
+
+			{% else %}
+
+
+
+			
+			<div class="title-section mb-md-5 mb-4">
+				<h6 class="w3ls-title-sub"></h6>
+				<h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Select Your Problem</h3>
+			</div><hr/>
+			<div class="login px-sm-12" style="width:100%">
+				<form action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="form-group row">
+
+						{% for i in alldisease %}
+						<div class="col-md-3" style="border:1px solid black;padding:6px">
+							<label>{{i}}</label>
+							<input type="radio" name="{{i}}" style="width:30px;height:15px">
+						</div>
+						{% endfor %}
+					
+					</div>
+					<button type="submit" class="btn btn-primary submit mt-4">Send Data</button>
+				</form>
+			</div>
+			{% endif %}
+		</div>
+	</section>
+	<!-- //register -->
+
+{% endblock %}
